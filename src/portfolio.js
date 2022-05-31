@@ -35,7 +35,7 @@ const greeting = {
   logo_name: "Wasimreza",
   nickname: "",
   subTitle:
-    "A passionate Software Engineer with four month of experience in Software Industry. Skilled in building & maintaining highly scalable and available software applications.",
+    "A passionate Software developer with one year of experience in Software Industry. Skilled in building & maintaining highly scalable and available software applications.",
   secondSubtitle:
     "Love to learn new technologies everyday and apply them through building new projects.",
   // resumeLink: "https://1drv.ms/w/s!AgouOYIBgjsMpCKSpTqIQvycOJW7?e=6kOg5F",
@@ -192,7 +192,6 @@ const skills = {
       skills: [
         "⚡ Experience working on multiple cloud platforms",
         "⚡ Hosting and maintaining dynamic web applications, wordpress or static websites on virtual machine instances",
-        "⚡ Setting up application backend in Firebase BaaS, Cloud Firestore",
       ],
       softwareSkills: [
         {
@@ -202,20 +201,7 @@ const skills = {
             color: "#4285F4",
           },
         },
-        {
-          skillName: "Firebase",
-          fontAwesomeClassname: "simple-icons:firebase",
-          style: {
-            color: "#FFCA28",
-          },
-        },
-        {
-          skillName: "Cloud Firestore",
-          fontAwesomeClassname: "vscode-icons:file-type-firestore",
-          style: {
-            color: "#FFCA28",
-          },
-        },
+
         {
           skillName: "Docker",
           fontAwesomeClassname: "simple-icons:docker",
@@ -324,20 +310,29 @@ const degrees = {
       ],
       website_link: "https://bnmu.ac.in/",
     },
+
+    {
+      title: "Rajiv Gandhi Proudyogiki Vishwavidyalaya",
+      subtitle: "MCA (Master of Computer Application)",
+      logo_path: "MCA.png",
+      alt_name: "mca Logo",
+      duration: "2021- PRESENT",
+      descriptions: [],
+      website_link: "https://www.rgpv.ac.in/",
+    },
   ],
 };
 
 const certifications = {
   certifications: [
-    // {
-    //   title: "Object Oriented Programming in Java",
-    //   subtitle: "- Mia Minnes, Leo Porter, Christine Alvarado",
-    //   logo_path: "UC-San-Diego-logo.png",
-    //   certificate_link:
-    //     "https://coursera.org/share/95c54b141d11cc638fabef63b5908f09",
-    //   alt_name: "University of California San Diego",
-    //   color_code: "#02447B",
-    // },
+    {
+      title: "NODE JS",
+      subtitle: "NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)",
+      logo_path: "node.png",
+      certificate_link: "https://www.udemy.com/",
+      alt_name: "Udemy",
+      color_code: "#02447B",
+    },
     // {
     //   title: "Java Multithreading",
     //   subtitle: "- John Purcell",
@@ -446,102 +441,39 @@ const experience = {
   title: "Work Experience",
   subtitle: "",
   description:
-    "I have worked with one of India's largest IT company as a software developer for more than four months. Over these four months I've worked on multiple large scale projects for different client companies.",
+    "I have worked with one of India's largest IT company as a software developer for more than one year. Over these one year I've worked on multiple large scale projects.",
   header_image_path: "experience.svg",
   sections: [
     {
       title: "Work & Projects",
       experiences: [
-        // {
-        //   title: "System Engineer",
-        //   company: "Tata Consultancy Services Limited",
-        //   company_url: "https://www.tcs.com/",
-        //   logo_path: "TCS-logo.png",
-        //   duration: "October 2015 - June 2020",
-        //   location: "Bangalore, Karnataka",
-        //   description: "",
-        //   color: "#0879bf",
-        //   projects: [
-        //     {
-        //       projectName: "Business Deposits",
-        //       clientName: "Client - U.S Bank",
-        //       projectDescription:
-        //         "Business Deposits is a complex web application made for small businesses and entrepreneurs so that they can open their business account in U.S. Bank as per their need. Created multiple web services, developed controller, service, repository classes and wrote business logic into service class.",
-        //     },
-        //     {
-        //       projectName: "Credit Bridge Core Services",
-        //       clientName: "Client - Wells Fargo Bank",
-        //       projectDescription:
-        //         "Credit Bridge is an intranet web application for Wells Fargo bank to audit various database tables within the bank. Built the application from scratch, starting from creating RESTful APIs, writing unit testcases for those services, till application build and deployment.",
-        //     },
-        //     {
-        //       projectName: "Intel Customized Security Solution (McAfee)",
-        //       clientName: "Client - Intel",
-        //       projectDescription:
-        //         "McAfee is well known for its various anti-virus products and providing security solutions throughout the world. Customized, tested (both automation and manual), and deployed their core anti-virus products based on the requirements of their around 100s of OEM (such as DELL, HP, ASUS) and non-OEM customers and delivered zero defect products to production.",
-        //     },
-        // ],
-        // },
+        {
+          title: "Backend developer",
+          company: "Daily doc health care",
+          company_url: "https://dailydoc.io/",
+          logo_path: "unnamed.png",
+          duration: "september - Present",
+          location: "Pune, Maharastra",
+          description: "",
+          color: "#0879bf",
+          projects: [
+            {
+              projectName: "Daily doc",
+              clientName: "***",
+              projectDescription:
+                "A unique platform for hospitals to streamline communication and bring work schedule online.",
+            },
+            {
+              projectName: "CmeHouse",
+              clientName: "***",
+              projectDescription: "Conference hosting service.",
+            },
+          ],
+        },
       ],
     },
-    // {
-    //   title: "Internships",
-    //   experiences: [
-    //     {
-    //       title: "",
-    //       company: "",
-    //       company_url: "",
-    //       logo_path: "",
-    //       duration: "",
-    //       location: "",
-    //       description:
-    //         "",
-    //       color: "",
-    //     },
-    //     {
-    //       title: "",
-    //       company: "",
-    //       company_url:
-    //         "",
-    //       logo_path: "intel_logo.jpg",
-    //       duration: "",
-    //       location: "",
-    //       description:
-    //         "",
-    //       color: "#0071C5",
-    //     },
-    //   ],
-    // },
-    // {
-    //   title: "Volunteerships",
-    //   experiences: [
-    //     {
-    //       title: "",
-    //       company: "",
-    //       company_url: "",
-    //       logo_path: "",
-    //       duration: "",
-    //       location: "",
-    //       description:
-    //         "",
-    //       color: "",
-    //     },
-    //     {
-    //       title: "",
-    //       company: "",
-    //       company_url: "",
-    //       logo_path: "",
-    //       duration: "",
-    //       location: "",
-    //       description:
-    //         "",
-    //       color: "",
-    //     },
-    //   ],
-    // },
   ],
 };
-
 // Projects Page
 const projectsHeader = {
   title: "Projects",
