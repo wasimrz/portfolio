@@ -35,7 +35,7 @@ const greeting = {
   logo_name: "Wasimreza",
   nickname: "",
   subTitle:
-    "A passionate Software developer with one year of experience in Software Industry. Skilled in building & maintaining highly scalable and available software applications.",
+    "A passionate Software developer with two year of experience in Software Industry. Skilled in building & maintaining highly scalable and available software applications.",
   secondSubtitle:
     "Love to learn new technologies everyday and apply them through building new projects.",
   // resumeLink: "https://1drv.ms/w/s!AgouOYIBgjsMpCKSpTqIQvycOJW7?e=6kOg5F",
