@@ -316,8 +316,10 @@ const degrees = {
       subtitle: "MCA (Master of Computer Application)",
       logo_path: "MCA.png",
       alt_name: "mca Logo",
-      duration: "2021- PRESENT",
-      descriptions: [],
+      duration: "2021- 2023",
+      descriptions: [
+          "⚡ Postgraduate with 8 CGPA.",
+      ],
       website_link: "https://www.rgpv.ac.in/",
     },
   ],
