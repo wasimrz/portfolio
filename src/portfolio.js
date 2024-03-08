@@ -441,7 +441,7 @@ const experience = {
   title: "Work Experience",
   subtitle: "",
   description:
-    "I have worked with one of India's largest IT company as a software developer for more than one year. Over these one year I've worked on multiple large scale projects.",
+    "I have worked with one of India's largest IT company as a software developer for more than two year. Over these one year I've worked on multiple large scale projects.",
   header_image_path: "experience.svg",
   sections: [
     {
