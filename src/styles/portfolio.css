@@ -110,12 +110,17 @@ html {
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
 }
 
 body {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
   background-color: var(--bg-primary);
   background-image: 
     radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.06) 0%, transparent 50%),
@@ -123,6 +128,13 @@ body {
     radial-gradient(var(--dot-color) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 28px 28px;
   transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* Custom Scrollbar */
@@ -500,21 +512,29 @@ body {
    -------------------------------------------------------------------------- */
 .mobile-showcase-container {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: minmax(0, 1fr) 360px;
   gap: 48px;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
 }
 
 .showcase-info-pane {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .app-selector-tabs {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .app-tab-btn {
@@ -552,6 +572,11 @@ body {
   border: 1px solid var(--border-subtle);
   backdrop-filter: blur(16px);
   box-shadow: var(--shadow-subtle);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  word-break: break-word;
 }
 
 .app-details-header {
@@ -559,6 +584,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 12px;
+  gap: 12px;
 }
 
 .app-name {
@@ -566,12 +592,15 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-primary);
+  line-height: 1.25;
+  word-break: break-word;
 }
 
 .app-tagline {
   font-size: 0.9rem;
   color: var(--text-accent);
   margin-bottom: 16px;
+  word-break: break-word;
 }
 
 .app-desc {
@@ -579,6 +608,7 @@ body {
   line-height: 1.6;
   color: var(--text-secondary);
   margin-bottom: 24px;
+  word-break: break-word;
 }
 
 .tech-tags-list {
@@ -586,6 +616,8 @@ body {
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 24px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .tech-pill {
@@ -1613,6 +1645,12 @@ body {
   background: var(--bg-card-hover);
 }
 
+.social-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
 .tile-info {
   display: flex;
   align-items: center;
@@ -1853,34 +1891,719 @@ body {
   to { transform: translateY(0); opacity: 1; }
 }
 
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN (OPTIMIZED FOR EVERY SMARTPHONE & TABLET)
+   -------------------------------------------------------------------------- */
+
+/* TABLETS & SMALL LAPTOPS (max-width: 992px) */
 @media (max-width: 992px) {
   .mobile-showcase-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
+
   .phone-wrapper {
     order: -1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
+
   .hero-title {
-    font-size: 2.8rem;
+    font-size: 2.85rem;
+  }
+
+  .projects-grid,
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
+/* SMARTPHONES & TABLETS (max-width: 768px) */
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.2rem;
+  .container {
+    padding: 0 18px;
   }
+
+  /* Navbar */
+  .navbar-inner {
+    height: 62px;
+  }
+
   .navbar-links {
     display: none;
   }
-  .section-title {
-    font-size: 1.8rem;
+
+  .nav-actions {
+    gap: 8px;
   }
+
+  /* Hero */
+  .hero-section {
+    padding: 48px 0 36px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.95rem, 7.5vw, 2.5rem);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  .status-pill {
+    font-size: 0.74rem;
+    padding: 5px 12px;
+    max-width: 100%;
+    white-space: normal;
+    text-align: left;
+    line-height: 1.4;
+  }
+
+  .status-pill .pulse-dot {
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  /* Sections */
+  .section {
+    padding: 52px 0;
+  }
+
+  .section-header {
+    margin-bottom: 26px;
+  }
+
+  .section-title {
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+    line-height: 1.25;
+  }
+
+  .section-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  /* Mobile Showcase */
+  .app-selector-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .app-selector-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .app-tab-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    padding: 7px 14px;
+  }
+
+  .app-details-card {
+    padding: 20px 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .app-name {
+    font-size: 1.35rem;
+  }
+
+  .app-tagline {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  .app-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
+
+  .tech-tags-list {
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+
+  .tech-pill {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  /* Phone Simulator Chassis */
+  .phone-controls-toolbar {
+    width: 100%;
+    max-width: min(340px, calc(100vw - 36px));
+    margin-bottom: 12px;
+  }
+
   .phone-chassis {
-    width: 320px;
-    height: 640px;
+    width: 100%;
+    max-width: min(340px, calc(100vw - 36px));
+    height: min(650px, 78vh);
+    border-radius: 42px;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  .phone-screen {
+    border-radius: 34px;
+  }
+
+  .telemetry-strip {
+    width: 100%;
+    max-width: min(340px, calc(100vw - 36px));
+    margin-top: 12px;
+    font-size: 0.68rem;
+    padding: 8px 12px;
+  }
+
+  /* Experience Timeline */
+  .experience-item {
+    padding-left: 28px;
+  }
+
+  .experience-timeline::before {
+    left: 5px;
+  }
+
+  .experience-dot {
+    left: 0;
+    top: 20px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .experience-card {
+    padding: 18px 14px;
+    border-radius: var(--radius-lg);
+  }
+
+  .experience-card-header {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .role-title {
+    font-size: 1.15rem;
+  }
+
+  .company-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .period-badge {
+    font-size: 0.72rem;
+    padding: 3px 8px;
+    align-self: flex-start;
+  }
+
+  .experience-summary {
+    font-size: 0.88rem;
+    margin-bottom: 14px;
+  }
+
+  .experience-bullets {
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .experience-bullets li {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  /* Tech Stack Grid */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .skill-category-card {
+    padding: 18px 14px;
+    border-radius: var(--radius-lg);
+    gap: 14px;
+  }
+
+  .category-title {
+    font-size: 1.05rem;
+  }
+
+  .category-badge {
+    font-size: 0.68rem;
+    padding: 2px 8px;
+  }
+
+  .skill-name {
+    font-size: 0.84rem;
+  }
+
+  .skill-level {
+    font-size: 0.7rem;
+  }
+
+  .micro-tag {
+    font-size: 0.65rem;
+    padding: 2px 5px;
+  }
+
+  /* Projects & Education */
+  .project-card {
+    padding: 18px 14px;
+    border-radius: var(--radius-lg);
+    gap: 14px;
+  }
+
+  .project-title {
+    font-size: 1.15rem;
+  }
+
+  .project-desc {
+    font-size: 0.86rem;
+    margin-bottom: 10px;
+  }
+
+  .project-impact-box {
+    font-size: 0.72rem;
+    padding: 6px 10px;
+  }
+
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .edu-card {
+    padding: 16px 14px;
+    border-radius: var(--radius-lg);
+    gap: 12px;
+  }
+
+  .edu-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .edu-degree {
+    font-size: 0.98rem;
+  }
+
+  .edu-institution {
+    font-size: 0.84rem;
+  }
+
+  .edu-meta {
+    font-size: 0.72rem;
+  }
+
+  .edu-desc {
+    font-size: 0.8rem;
+  }
+
+  /* Contact */
+  .contact-tile {
+    padding: 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .tile-info {
+    gap: 10px;
+  }
+
+  .tile-icon-box {
+    width: 36px;
+    height: 36px;
+  }
+
+  .tile-label {
+    font-size: 0.72rem;
+  }
+
+  .tile-value {
+    font-size: 0.88rem;
+  }
+
+  .quick-message-box {
+    padding: 20px 16px;
+    border-radius: var(--radius-lg);
+  }
+}
+
+/* SMARTPHONES COMPACT (max-width: 640px) */
+@media (max-width: 640px) {
+  /* Navbar */
+  .brand-tag {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 0.9rem;
+  }
+
+  .brand-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .cmd-k-btn {
+    padding: 6px 10px;
+  }
+
+  .cmd-k-btn span,
+  .cmd-k-btn .kbd-badge {
+    display: none;
+  }
+
+  /* Hero Actions full-width stack */
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Metrics 2-column balanced grid */
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .metrics-grid .metric-card:last-child {
+    grid-column: span 2;
+  }
+
+  .metric-card {
+    padding: 14px;
+  }
+
+  .metric-value {
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+  }
+
+  .metric-label {
+    font-size: 0.78rem;
+  }
+
+  .metric-detail {
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  /* Command Palette & Toast */
+  .palette-overlay {
+    padding: 16px 12px;
+  }
+
+  .palette-modal {
+    width: 100%;
+    max-height: 80vh;
+  }
+
+  .palette-footer {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .toast-container {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    align-items: center;
+  }
+
+  .toast {
+    width: 100%;
+    max-width: 380px;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.82rem;
+    padding: 10px 14px;
+  }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* SMALL PHONES (max-width: 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 14px;
+  }
+
+  .navbar-inner {
+    height: 58px;
+  }
+
+  .navbar-brand {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .brand-avatar {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .brand-name {
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
+
+  .brand-tag {
+    display: none;
+  }
+
+  .nav-actions {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .cmd-k-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .cmd-k-btn .cmd-text,
+  .cmd-k-btn .kbd-badge {
+    display: none;
+  }
+
+  .theme-toggle-btn {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .nav-copy-btn {
+    padding: 5px 9px;
+    font-size: 0.74rem;
+    flex-shrink: 0;
+  }
+
+  .social-links-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .contact-tile .tile-value {
+    word-break: break-all;
+  }
+
+  .app-details-header {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .phone-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .phone-controls-toolbar {
+    width: 100%;
+    max-width: min(300px, calc(100vw - 28px));
+    margin: 0 auto 10px;
+  }
+
+  .telemetry-strip {
+    width: 100%;
+    max-width: min(300px, calc(100vw - 28px));
+    margin: 10px auto 0;
+    font-size: 0.65rem;
+  }
+
+  .phone-chassis {
+    width: 100%;
+    max-width: min(300px, calc(100vw - 28px));
+    height: min(600px, 75vh);
+    border-radius: 36px;
+    padding: 8px;
+    border-width: 3px;
+    margin: 0 auto;
+  }
+
+  .phone-screen {
+    border-radius: 28px;
+  }
+}
+
+/* EXTRA SMALL PHONES (e.g. 320px - 360px) */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .navbar-inner {
+    height: 54px;
+  }
+
+  .navbar-brand {
+    gap: 6px;
+  }
+
+  .brand-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .brand-name {
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .nav-actions {
+    gap: 4px;
+  }
+
+  .cmd-k-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .theme-toggle-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-copy-btn {
+    padding: 4px 6px;
+    font-size: 0.7rem;
+    gap: 4px;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-grid .metric-card:last-child {
+    grid-column: auto;
+  }
+
+  .phone-controls-toolbar {
+    width: 280px;
+    max-width: calc(100vw - 20px);
+    margin: 0 auto 10px;
+    font-size: 0.68rem;
+    padding: 4px 8px;
+  }
+
+  .phone-toggle-btn {
+    font-size: 0.68rem;
+    padding: 2px 6px;
+  }
+
+  .telemetry-strip {
+    width: 280px;
+    max-width: calc(100vw - 20px);
+    margin: 10px auto 0;
+    font-size: 0.62rem;
+    padding: 6px 8px;
+  }
+
+  .phone-chassis {
+    width: 280px;
+    max-width: calc(100vw - 20px);
+    height: 560px;
+    border-radius: 32px;
+    padding: 6px;
+    border-width: 3px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .phone-screen {
+    border-radius: 26px;
+  }
+
+  .dynamic-island {
+    width: 76px;
+    height: 20px;
+    top: 6px;
+    padding: 0 6px;
+  }
+
+  .dynamic-island .camera-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .dynamic-island .sensor-dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .phone-status-bar {
+    height: 38px;
+    padding: 6px 12px 0;
+    font-size: 0.68rem;
+  }
+
+  .reelty-pip-cohost {
+    top: 210px;
+    width: 110px;
+    height: 85px;
+  }
+
+  .cohost-toggle-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.7rem;
+    right: 10px;
+    bottom: 65px;
+  }
+
+  .interactive-chat-feed {
+    max-height: 110px;
+  }
+
+  .chat-bubble {
+    font-size: 0.66rem;
+    padding: 4px 8px;
   }
 }

@@ -103,7 +103,7 @@ export default function ContactSection({ onShowToast }) {
             </div>
 
             {/* Social Links */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
+            <div className="social-links-grid">
               <a 
                 href={personal.github} 
                 target="_blank" 

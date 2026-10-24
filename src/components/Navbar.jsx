@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Sun, Moon } from 'lucide-react';
+import { Search, Sun, Moon, Mail } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Navbar({ onOpenPalette, onShowToast, theme, onToggleTheme }) {
@@ -61,10 +61,10 @@ export default function Navbar({ onOpenPalette, onShowToast, theme, onToggleThem
             <button 
               onClick={onOpenPalette} 
               className="cmd-k-btn"
-              title="Open Command Palette"
+              title="Open Command Palette (⌘K)"
             >
               <Search size={14} />
-              <span>Search</span>
+              <span className="cmd-text">Search</span>
               <span className="kbd-badge">⌘K</span>
             </button>
 
@@ -79,10 +79,11 @@ export default function Navbar({ onOpenPalette, onShowToast, theme, onToggleThem
 
             <button 
               onClick={handleCopyEmail}
-              className="btn-secondary"
-              style={{ padding: '6px 14px', fontSize: '0.82rem' }}
+              className="btn-secondary nav-copy-btn"
+              title={`Copy ${personal.email}`}
             >
-              Copy Email
+              <Mail size={13} className="nav-email-icon" />
+              <span className="nav-copy-text">Email</span>
             </button>
           </div>
         </div>
