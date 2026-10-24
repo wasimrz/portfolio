@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "npm i @rollup/rollup-linux-x64-gnu@4.65.0 --no-save 2>/dev/null || true",
     "build": "vite build && (cp -r dist build 2>/dev/null || true)",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
